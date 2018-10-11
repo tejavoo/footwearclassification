@@ -153,7 +153,7 @@ def main(_):
   train_writer = tf.summary.FileWriter(graph_location)
   train_writer.add_graph(tf.get_default_graph())
 
-  gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)
+  gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.1)
 
   with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)) as sess:
     sess.run(tf.global_variables_initializer())
